@@ -13,11 +13,22 @@ class SmsReceiverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sms_receiver)
 
-        title = getString(R.string.incoming_message)
-        val senderNo = intent.getStringExtra(EXTRA_SMS_NO)
-        val senderMessage = intent.getStringExtra(EXTRA_SMS_MESSAGE)
-        tv_from.text = getString(R.string.coming_from)+": "+senderNo
-        tv_message.text = senderMessage
-        btn_close.setOnClickListener { finish() }
+            val senderNo = intent.getStringExtra(EXTRA_SMS_NO)
+            val senderMessage = intent.getStringExtra(EXTRA_SMS_MESSAGE)
+            if(senderMessage.toString().contains( "Polisi", ignoreCase = true)) {
+                title = getString(R.string.warning)
+                tv_from.text = getString(R.string.coming_from) + ": " + senderNo
+                tv_message.text = senderMessage
+                btn_close.setOnClickListener {
+                    finish()
+                }
+            } else {
+                title = getString(R.string.incoming_message)
+                tv_from.text = getString(R.string.coming_from)+": "+senderNo
+                tv_message.text = senderMessage
+                btn_close.setOnClickListener {
+                    finish()
+                }
+            }
     }
 }
