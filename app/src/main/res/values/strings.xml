@@ -23,4 +23,5 @@
     <string name="field_digit_only">Kolom Hanya Untuk Angka</string>
     <string name="address">Alamat</string>
     <string name="gender">Jenis Kelamin</string>
+    <string name="act_setting">Setting</string>
 </resources>

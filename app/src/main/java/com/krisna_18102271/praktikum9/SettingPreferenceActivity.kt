@@ -29,6 +29,17 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.title = getString(R.string.setting_page)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val actionbar = supportActionBar
+
+        actionbar!!.title = "Setting"
+
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onClick(p0: View?) {
