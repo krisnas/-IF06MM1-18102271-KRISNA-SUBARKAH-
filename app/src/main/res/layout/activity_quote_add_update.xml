@@ -39,10 +39,35 @@
         android:id="@+id/edt_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+        <EditText
+            android:id="@+id/edt_catatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/catatan"
+            android:inputType="textCapSentences"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+        <EditText
+            android:id="@+id/edt_pesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pesan"
+            android:inputType="textCapSentences"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btn_submit"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/submit" />
 </LinearLayout>

@@ -36,6 +36,8 @@ class QuoteAdapter(private val activity: Activity):
             binding.tvItemCategory.text = categoryList[quote.category!!.toInt()]
             binding.tvItemDate.text = quote.date
             binding.tvItemDescription.text = quote.description
+            binding.tvItemCatatan.text = quote.catatan
+            binding.tvItemPesan.text = quote.pesan
             binding.cvItemQuote.setOnClickListener{
                 val intent = Intent(activity, QuoteAddUpdateActivity::class.java)
                 intent.putExtra(EXTRA_POSITION, position)

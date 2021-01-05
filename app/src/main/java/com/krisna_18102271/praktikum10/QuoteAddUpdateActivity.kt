@@ -73,6 +73,8 @@ class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
                 binding.edtTitle.setText(it.title)
                 binding.edtDescription.setText(it.description)
                 binding.edtCategory.setSelection(it.category!!.toInt())
+                binding.edtCatatan.setText(it.catatan)
+                binding.edtPesan.setText(it.pesan)
             }!!
         } else {
             actionBarTitle = "Tambah"
@@ -92,9 +94,13 @@ class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
                 binding.edtTitle.error = "Field can not be blank"
                 return
             }
+            val catatan = binding.edtCatatan.text.toString().trim()
+            val pesan = binding.edtPesan.text.toString().trim()
             quote?.title = title
             quote?.description = description
             quote?.category = category
+            quote?.catatan = catatan
+            quote?.pesan = pesan
             val intent = Intent()
             intent.putExtra(EXTRA_QUOTE, quote)
             intent.putExtra(EXTRA_POSITION, position)
@@ -102,6 +108,8 @@ class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
             values.put(DatabaseContract.QuoteColumns.TITLE, title)
             values.put(DatabaseContract.QuoteColumns.DESCRIPTION, description)
             values.put(DatabaseContract.QuoteColumns.CATEGORY, category)
+            values.put(DatabaseContract.QuoteColumns.CATATAN, catatan)
+            values.put(DatabaseContract.QuoteColumns.PESAN, pesan)
             if (isEdit) {
                 val result = quoteHelper.update(quote?.id.toString(),
                     values).toLong()
