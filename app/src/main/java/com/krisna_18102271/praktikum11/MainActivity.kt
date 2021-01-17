@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnSignOut.setOnClickListener(this)
         binding.btnEmailVerify.setOnClickListener(this)
 
+
         val currentUser = auth.currentUser
         if (currentUser == null) {
             val intent = Intent(this@MainActivity, SignInActivity::class.java)
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             updateUI(currentUser)
         }
+
     }
 
     public override fun onStart() {
@@ -54,6 +57,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             updateUI(currentUser)
         }
+
     }
 
     override fun onClick(v: View) {
@@ -110,20 +114,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val photoUrl = currentUser.photoUrl
             val emailVerified = currentUser.isEmailVerified
             val uid = currentUser.uid
+
+
             binding.tvName.text = name
             if (TextUtils.isEmpty(name)) {
                 binding.tvName.text = "No Name"
             }
+
             binding.tvUserId.text = email
             for (profile in it.providerData) {
+
                 val providerId = profile.providerId
                 if (providerId == "password" && emailVerified == true) {
                     binding.btnEmailVerify.isVisible = false
                 }
+
                 if (providerId == "phone") {
                     binding.tvName.text = phoneNumber
                     binding.tvUserId.text = providerId
                 }
+                Glide.with(this).load(photoUrl).circleCrop().into(binding.ivImage)
+
             }
         }
     }
