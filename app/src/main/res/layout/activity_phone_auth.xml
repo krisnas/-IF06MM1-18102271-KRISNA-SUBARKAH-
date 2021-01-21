@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="Resend Code"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="@+id/btnContinue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnContinue"
@@ -83,6 +84,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:text="Continue"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/btnResend"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputVerifyCode" />
@@ -105,6 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Verify"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/inputVerifyCode"
         app:layout_constraintEnd_toEndOf="@+id/inputNumber"
         app:layout_constraintHorizontal_bias="0.0"

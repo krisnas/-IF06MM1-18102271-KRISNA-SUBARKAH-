@@ -51,6 +51,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="Verify Email"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/teal_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +65,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Sign Out"
+        android:backgroundTint="@color/teal_200"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,10 +74,13 @@
 
     <Button
         android:id="@+id/btnDashboardQuote"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Quotes"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/purple_700"
         app:layout_constraintEnd_toEndOf="@+id/btnSignOut"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btnSignOut"
         app:layout_constraintTop_toBottomOf="@+id/btnSignOut" />
 

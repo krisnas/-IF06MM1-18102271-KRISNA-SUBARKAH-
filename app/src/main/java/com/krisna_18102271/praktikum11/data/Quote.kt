@@ -10,5 +10,6 @@ data class Quote(
     var title: String? = null,
     var description: String? = null,
     var category: String? = null,
-    var date: Timestamp? = null
+    var date: Timestamp? = null,
+    var isDarkTheme: Boolean = false
 ) : Parcelable

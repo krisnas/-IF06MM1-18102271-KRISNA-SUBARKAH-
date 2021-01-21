@@ -6,4 +6,6 @@
     <string name="description">Description</string>
     <string name="date">Date</string>
     <string name="submit">Submit</string>
+    <string name="tv_theme">Theme Mode</string>
+    <string name="default_theme">System Default</string>
 </resources>
