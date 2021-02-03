@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, MainView {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         binding.btnSign.setOnClickListener(this)
         presenter = MainPresenter(this, CoroutineContextProvider())
         tokenPref = TokenPref(this)
