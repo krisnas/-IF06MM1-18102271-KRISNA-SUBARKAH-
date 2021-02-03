@@ -46,10 +46,10 @@ class ClassQuotesFragment : Fragment(), MainView {
         presenter =
             MainPresenter(this, CoroutineContextProvider())
         progressbar.visibility = View.VISIBLE
-        presenter.getClassQuotes(token.token)
+        presenter.getMyQuotes(token.token)
         swiperefresh.onRefresh {
             progressbar.visibility = View.INVISIBLE
-            presenter.getClassQuotes(token.token)
+            presenter.getMyQuotes(token.token)
         }
     }
     override fun onResume() {

@@ -46,7 +46,7 @@ class GlobalQuotesFragment : Fragment(), MainView {
         presenter =
             MainPresenter(this, CoroutineContextProvider())
         progressbar.visibility = View.VISIBLE
-        presenter.getAllQuotes(token.token.toString())
+        presenter.getMyQuotes(token.token)
         swiperefresh.onRefresh {
             progressbar.visibility = View.INVISIBLE
             presenter.getAllQuotes(token.token.toString())
@@ -54,7 +54,7 @@ class GlobalQuotesFragment : Fragment(), MainView {
     }
     override fun onResume() {
         super.onResume()
-        presenter.getAllQuotes(token.token.toString())
+        presenter.getClassQuotes(token.token)
     }
 
     override fun showMessage(messsage: String) {
